@@ -19,7 +19,7 @@ class Student(models.Model):
         return self.name
 
 class Portfolio(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student = models.OneToOneField(Student, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     contact_email = models.EmailField()
     is_active = models.BooleanField(default=True)
