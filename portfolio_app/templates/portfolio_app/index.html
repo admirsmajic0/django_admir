@@ -1,0 +1,16 @@
+{% extends "portfolio_app/base_template.html" %}
+
+{% block content %}
+
+<a href="{% url 'index' %}">Home</a>
+
+<h2>Active Student Portfolios</h2>
+
+<ul>
+    {% for portfolio in active_portfolios %}
+    {% empty %}
+        <li>No active portfolios available.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
