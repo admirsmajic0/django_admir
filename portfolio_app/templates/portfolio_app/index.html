@@ -8,6 +8,7 @@
 
 <ul>
     {% for portfolio in active_portfolios %}
+        <li>{{portfolio.title}}</li>
     {% empty %}
         <li>No active portfolios available.</li>
     {% endfor %}
