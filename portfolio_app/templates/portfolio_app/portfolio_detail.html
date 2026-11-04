@@ -4,13 +4,23 @@
 
 
 <h2>Title: {{ portfolio.title }}</h2>
-<p>Description: {{ portfolio.description }}</p>
-<p>Email: {{ student.email }}</p>
-{% if student.is_active == True %}
+<p>Description: {{ portfolio.about }}</p>
+<p>Email: {{ portfolio.contact_email }}</p>
+{% if portfolio.is_active == True %}
     <p>Is Active: Yes</p>
 {% else %}
     <p>Is Active: No</p>
 {% endif %}
+
+<ul>
+    {% for project in portfolio.projects_set.all %}
+        <li>
+            <a href="{% url 'project_detail' project.pk %}">{{ project.title }}</a>
+        </li>
+    {% empty %}
+        <li>No projects found for this portfolio.</li>
+    {% endfor %}
+</ul>
 
 <li><a href="{% url 'student_list' %}">Back to Students</a></li>
 
