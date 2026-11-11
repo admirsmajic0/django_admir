@@ -13,7 +13,7 @@
 {% endif %}
 
 <ul>
-    {% for project in portfolio.projects_set.all %}
+    {% for project in portfolio.project_set.all %}
         <li>
             <a href="{% url 'project_detail' project.pk %}">{{ project.title }}</a>
         </li>
