@@ -8,11 +8,15 @@
 <p>Major: {{ student.get_major_display }}</p>
 
 
-<li> 
+{% if student.portfolio %}
+<li>
 <a href="{% url 'portfolio_detail' student.portfolio.pk %}">View Portfolio</a>
 </li>
+{% else %}
+<p>No portfolio has been created for this student yet.</p>
+{% endif %}
 <li>
-<a href="{% url 'student_list' %}">Back to Students</a>
+<a href="{% url 'student-list' %}">Back to Students</a>
 </li>
 
 {% endblock %}

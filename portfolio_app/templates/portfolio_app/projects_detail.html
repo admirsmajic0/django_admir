@@ -6,4 +6,6 @@
 <p>Description: {{ project.description }}</p>
 <p>URL: {{ project.url }}</p>
 
+<li><a href="{% url 'portfolio_detail' project.portfolio.pk %}">Back to Portfolio</a></li>
+
 {% endblock%}
