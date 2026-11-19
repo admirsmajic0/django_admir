@@ -40,3 +40,8 @@ class StudentUpdateView(UpdateView):
     fields = ['name', 'email', 'major']
     template_name = 'portfolio_app/student_form.html'
     success_url = reverse_lazy('student-list')
+
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = 'portfolio_app/student_confirm_delete.html'
+    success_url = reverse_lazy('student-list')
